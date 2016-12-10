@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    {{>layouts/include}}
+    {{>layouts/header}}
+    <link rel=“stylesheet” href=“templates/css/main.css” th:href=“@{/css/main.css}” />
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="post" th:object="${loginForm}">
-        <input id="username" type="text" name="username" th:value="*{username}"/>
-        <input id="password" type="password" name="password" th:value="*{password}"/>
-        <input type="hidden" name="${_csrf.parameterName}"/>
-        <input type="submit" value="Login" />
-    </form>
-    <a href="register.html" th:href="@{/users/register}">Sign up</a>
+    <br /><br />
+    <div class="container">
+        <h1>Login</h1>
+        <div class="jumbotron vertical-center">
+            <p>Enter your login information below :</p>
+            <form method="post" th:object="${loginForm}">
+                <input id="username" type="text" name="username" placeholder="Username" th:value="*{username}"/>
+                <br />
+                <input id="password" type="password" name="password" placeholder="Password" th:value="*{password}"/>
+                <input type="hidden" name="${_csrf.parameterName}"/>
+                <br /><br />
+                <input class="btn btn-default" type="submit" value="Login" />
+                <a class="btn btn-primary" href="register.html">Sign up</a>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

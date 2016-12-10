@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog</title>
+    <title>PiafBlog</title>
+    {{>layouts/include}}
+    {{>layouts/header}}
 </head>
 <body>
-    <h1>Listes de posts</h1>
-    {{#latest3posts}}
-    <ul>
-        <li>{{title}}</li>
-        <li>{{body}}</li>
-        <li>{{user}}</li>
-    </ul>
-    {{/latest3posts}}
-
+    <br /><br />
+    <div class="container">
+        <h1>Listes de posts</h1>
+        {{#latest3posts}}
+        <ul>
+            <li>{{title}}</li>
+            <li>{{body}}</li>
+            <li>{{user}}</li>
+        </ul>
+        {{/latest3posts}}
+    </div>
 </body>
 </html>
