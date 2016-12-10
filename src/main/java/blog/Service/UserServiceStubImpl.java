@@ -13,6 +13,7 @@ public class UserServiceStubImpl implements UserService{
 
     @Override
     public boolean authentificate(String username, String password) {
+        //replace with db when actived
         return Objects.equals(username,password);
     }
 }

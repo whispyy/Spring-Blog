@@ -11,11 +11,16 @@
     <div class="container">
         <h1>Listes de posts</h1>
         {{#latest3posts}}
-        <ul>
+        <div class="list-group-item">
+            <h4 class="list-group-item-heading">{{title}}</h4>
+            <p class="list-group-item-text"><a href="#">@{{user}}</a> {{body}}</p>
+        </div>
+
+        <!--<ul>
             <li>{{title}}</li>
             <li>{{body}}</li>
             <li>{{user}}</li>
-        </ul>
+        </ul>-->
         {{/latest3posts}}
     </div>
 </body>
