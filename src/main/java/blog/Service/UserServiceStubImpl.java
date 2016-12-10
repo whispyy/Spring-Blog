@@ -1,5 +1,6 @@
 package blog.Service;
 
+import blog.models.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Register</title>
     {{>layouts/include}}
     {{>layouts/header}}
     <link rel=“stylesheet” href=“templates/css/main.css” th:href=“@{/css/main.css}” />
@@ -10,17 +10,17 @@
 <body>
     <br /><br />
     <div class="container">
-        <h1>Login</h1>
+        <h1>Register</h1>
         <div class="jumbotron vertical-center">
-            <p>Enter your login information below :</p>
+            <p>Enter your information to register below :</p>
             <form method="post" th:object="${loginForm}">
                 <input id="username" type="text" name="username" placeholder="Username" th:value="*{username}"/>
                 <br />
                 <input id="password" type="password" name="password" placeholder="Password" th:value="*{password}"/>
+                <input id="password2" type="password" name="password" placeholder="Password again" th:value="*{verifyPassword}"/>
                 <input type="hidden" name="${_csrf.parameterName}"/>
                 <br /><br />
-                <input class="btn btn-default" type="submit" value="Login" />
-                <a class="btn btn-primary" href="register.html">Sign up</a>
+                <input class="btn btn-default" type="submit" value="Register" />
             </form>
         </div>
     </div>

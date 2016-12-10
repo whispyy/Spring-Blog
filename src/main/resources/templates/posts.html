@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PiafBlog</title>
+    <title>All Posts</title>
     {{>layouts/include}}
     {{>layouts/header}}
 </head>
@@ -10,14 +10,14 @@
     <br /><br />
     <div class="container">
         <div class="page-header">
-            <h1>Listes des derniers posts</h1>
+            <h1>All Posts</h1>
         </div>
-        {{#latest5posts}}
+        {{#allPosts}}
         <div class="list-group-item">
             <h4 class="list-group-item-heading">{{title}}</h4>
             <p class="list-group-item-text"><a href="#">@{{user}}</a> {{body}}</p>
         </div>
-        {{/latest5posts}}
+        {{/allPosts}}
     </div>
     {{>layouts/footer}}
 </body>
