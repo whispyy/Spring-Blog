@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post</title>
+    {{>layouts/include}}
+    {{>layouts/header}}
+    <link rel=“stylesheet” href=“templates/css/main.css” th:href=“@{/css/main.css}” />
+</head>
+<body>
+<br /><br />
+<div class="container">
+    <h1>Send new post</h1>
+    <div class="jumbotron vertical-center">
+        <p>Enter a title and a body for the new post</p>
+        <form method="post" th:object="${loginForm}">
+            <input id="title" type="text" name="title" placeholder="Title" th:value="*{title}"/>
+            <br />
+            <input id="body" type="body" name="body" placeholder="The body of the post" th:value="*{body}"/>
+            <br /><br />
+            <input class="btn btn-default" type="submit" value="Send" />
+        </form>
+    </div>
+</div>
+{{>layouts/footer}}
+</body>
+</html>

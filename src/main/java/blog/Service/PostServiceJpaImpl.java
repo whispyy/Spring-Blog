@@ -27,6 +27,11 @@ public class PostServiceJpaImpl implements PostService{
     }
 
     @Override
+    public List<Post> findAllDesc(){
+        return this.postRepo.findAllDesc();
+    }
+
+    @Override
     public Post findById(Long id) {
         return this.postRepo.findOne(id);
     }
