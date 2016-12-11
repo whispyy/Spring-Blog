@@ -44,5 +44,4 @@ public class UserServiceJpaImpl implements UserService {
         this.userRepo.delete(id);
     }
 
-
 }
