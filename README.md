@@ -1,13 +1,13 @@
 # Projet IFI 2016 : Spring MVC blog
 
-* Durand Jean-Frédéric & Frolkova Vasilina*
+*Durand Jean-Frédéric & Frolkova Vasilina*
 
-# Pré-requis
+## Pré-requis
 
 * une base de donnée mySQL
 * maven
 
-# Lancement du projet
+## Lancement du projet
 
 * Via l'IDE Intellij il suffit de cliquer sur "run"
 * les réglages sont à configurer dans le dossier src/main/resources/application.properties
@@ -27,13 +27,14 @@ Si à chaque lancement, la base doit être nettoyer alors il faut décommenter c
 # spring.jpa.properties.hibernate.hbm2ddl.auto = create
 ```
 
-# Fonctionnalités implémentés
+# Fonctionnalités implémentées
 
-* S'enregistrer, Se connecter
+* S'enregistrer, Se connecter, Se déconnecter
+* Voir la liste de tous les posts
 * Créer des posts
-* Consulter le profils des utilisateurs
+* Consulter le profil des utilisateurs
 * Consulter les posts des utilisateurs
-* Voir la liste des posts
+* la page d'accueil affiche uniquement les 5 posts les plus récents.
 
 # Bref descriptions des fichiers
 
