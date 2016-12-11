@@ -22,7 +22,7 @@ public class AllPostsController {
 
     @RequestMapping("/posts")
     public String posts(Model model, HttpSession session) {
-        List<Post> allPosts = postService.findAll();
+        List<Post> allPosts = postService.findAllDesc();
         model.addAttribute("allPosts", allPosts);
         //Retrieve the user if logged in;
         User user = (User) session.getAttribute("userLogged");

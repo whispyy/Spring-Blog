@@ -26,6 +26,7 @@ public class addPostController {
     @Autowired
     private PostService postService;
 
+
     @RequestMapping("/addPost")
     public String addPost(@Valid addPostForm postForm, BindingResult br, HttpSession session, Model model){
         if (br.hasErrors()) {
@@ -35,8 +36,6 @@ public class addPostController {
         User user = (User) session.getAttribute("userLogged");
         if (user != null)
             model.addAttribute("userLogged", user);
-
-
 
         Post post = new Post(postForm.getTitle(), postForm.getBody());
         post.setAuthor(user);

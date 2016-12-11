@@ -7,8 +7,18 @@
     {{>layouts/header}}
 </head>
 <body>
-    <h1>Greeting</h1>
-    <p>Hello {{userName}}</p>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Profile : {{userName}}</h3>
+            </div>
+            <div class="panel-body">
+                FullName : {{fullName}}
+                <br />
+                <a class="btn btn-primary" href="{{userName}}/posts">See {{userName}} posts</a>
+            </div>
+        </div>
+    </div>
     {{>layouts/footer}}
 </body>
 </html>
