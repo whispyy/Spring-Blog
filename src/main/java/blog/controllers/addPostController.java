@@ -42,6 +42,6 @@ public class addPostController {
         post.setAuthor(user);
         postService.create(post);
 
-        return "redirect :/";
+        return "/";
     }
 }
