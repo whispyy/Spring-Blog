@@ -1,15 +1,29 @@
 package blog.models;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by jf on 09/12/16.
  */
+@Entity
+@Table(name= "posts")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, length = 300)
     private String title;
+
+    @Lob
+    @Column(nullable=false)
     private String body;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private User author;
+
+    @Column(nullable=false)
     private Date date = new Date();
 
     public Post(long id, String title, String body, User user) {
@@ -58,6 +72,8 @@ public class Post {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    public Post() { }
 
     public Post(Long id, String title, String body, User author, Date date) {
         this.id = id;

@@ -7,13 +7,15 @@ import javax.validation.constraints.Size;
  * Created by jf on 10/12/16.
  */
 public class RegisterForm {
-    @Size(min=2, max=30, message = "Username size should be in the range [2...30]")
+    @Size(min=2, max=30, message = "Trop court ou trop long.")
     private String username;
 
     @NotNull
     @Size(min=1, max=50)
     private String password;
-    private String verifyPassword;
+
+    @Size(min=2, max=30, message = "Trop court ou trop long.")
+    private String fullname;
 
     public String getUsername() {
         return username;
@@ -31,12 +33,13 @@ public class RegisterForm {
         this.password = password;
     }
 
-    public void setVerifyPassword(String verifyPassword) {
-        this.verifyPassword = verifyPassword;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
-    public String getVerifyPassword() {
+    public String getFullname() {
 
-        return verifyPassword;
+        return fullname;
     }
+
 }

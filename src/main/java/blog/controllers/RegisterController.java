@@ -2,6 +2,7 @@ package blog.controllers;
 
 import blog.Service.UserService;
 import blog.forms.RegisterForm;
+import blog.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+
+import static org.springframework.cglib.beans.BeanMap.create;
 
 /**
  * Created by jf on 10/12/16.
@@ -30,10 +33,10 @@ public class RegisterController {
         if (br.hasErrors()) {
             return "/register";
         }
-        if (registerForm.getPassword() != registerForm.getVerifyPassword()){
-            //add an error message saying passwords doesn't match
-            return "/register";
-        }
+        User user = new User(registerForm.getUsername(),registerForm.getPassword(),registerForm.getFullname());
+        userService.create(user);
+        System.out.println(user.toString());
+        System.out.println(userService.findAll());
         //need to check if username already exists in database
 
         return "redirect:/";

@@ -17,7 +17,8 @@
                 <input id="username" type="text" name="username" placeholder="Username" th:value="*{username}"/>
                 <br />
                 <input id="password" type="password" name="password" placeholder="Password" th:value="*{password}"/>
-                <input id="password2" type="password" name="password" placeholder="Password again" th:value="*{verifyPassword}"/>
+                <br />
+                <input id="fullname" type="text" name="fullname" placeholder="Full Name" th:value="*{fullname}"/>
                 <input type="hidden" name="${_csrf.parameterName}"/>
                 <br /><br />
                 <input class="btn btn-default" type="submit" value="Register" />

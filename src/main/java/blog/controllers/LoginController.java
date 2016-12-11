@@ -30,9 +30,7 @@ public class LoginController {
             return "/login";
         }
 
-        if (!userService.authentificate(loginForm.getUsername(), loginForm.getPassword())){
-            return "/login";
-        }
+
         return "redirect:/";
     }
 }
