@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -23,7 +24,12 @@ public class ProfileController {
     private PostService postService;
 
     @RequestMapping("/profile/{user}")
-    public String profile(@PathVariable("user") String user, Model model){
+    public String profile(@PathVariable("user") String user, Model model, HttpSession session){
+        //Retrieve the user if logged in;
+        User userLogged = (User) session.getAttribute("userLogged");
+        if (userLogged != null){
+            model.addAttribute("userLogged", userLogged);
+        }
 
         model.addAttribute("userName", user);
 
@@ -39,7 +45,12 @@ public class ProfileController {
     }
 
     @RequestMapping("profile/{user}/posts")
-    public String profilePosts(@PathVariable("user") String user, Model model){
+    public String profilePosts(@PathVariable("user") String user, Model model, HttpSession session){
+        //Retrieve the user if logged in;
+        User userLogged = (User) session.getAttribute("userLogged");
+        if (userLogged != null)
+            model.addAttribute("userLogged", userLogged);
+
         model.addAttribute("userName", user);
         List<Post> all = postService.findAll();
         List<String> posts = new ArrayList<String>();
